@@ -1,0 +1,18 @@
+:root {
+  --background: #fafafa;
+  --container: #e4e5f1;
+  --text-disabled: #d2d3db;
+  --text: #9394a5;
+  --text-input: #484b6a;
+  --active: #8fb8e7;
+}
+
+:root.dark-theme {
+  --background: #161722;
+  --container: #25273c;
+  --text-disabled: #cacde8;
+  --text-disabled-hover: #e4e5f1;
+  --text: #777a92;
+  --text-input: #4d5066;
+  --border: #393a4c;
+}
