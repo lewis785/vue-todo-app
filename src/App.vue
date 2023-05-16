@@ -1,5 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Background from './components/Background.vue'
+</script>
 
-<template></template>
+<template>
+  <Background>
+    <input type="text" />
+  </Background>
+</template>
 
-<style scoped></style>
+<style></style>
