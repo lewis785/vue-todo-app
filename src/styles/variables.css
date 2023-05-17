@@ -5,6 +5,10 @@
   --text: #9394a5;
   --text-input: #484b6a;
   --active: #8fb8e7;
+
+  --white: #fff;
+  --font-regular: 1.125rem;
+  --font-large: 1.5rem;
 }
 
 :root.dark-theme {
