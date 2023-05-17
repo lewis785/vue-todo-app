@@ -6,8 +6,10 @@
 
 <style scoped lang="scss">
 .background {
-  width: 100%;
+  display: flex;
+  justify-content: center;
   background-image: url(../assets/bg-desktop-light.jpg);
+  width: 100%;
   height: 100%;
   background-size: 100%;
   background-position: center top;
