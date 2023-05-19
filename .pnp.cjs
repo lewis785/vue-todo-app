@@ -52,7 +52,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["vitest", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:0.31.0"],\
             ["vue", "npm:3.3.2"],\
             ["vue-router", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:4.2.0"],\
-            ["vue-tsc", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:1.7.3"]\
+            ["vue-tsc", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:1.7.3"],\
+            ["vue-uuid", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:3.0.0"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -671,6 +672,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-tough-cookie-npm-4.0.2-9e61f877e6-e055556ffd.zip/node_modules/@types/tough-cookie/",\
           "packageDependencies": [\
             ["@types/tough-cookie", "npm:4.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/uuid", [\
+        ["npm:8.3.4", {\
+          "packageLocation": "./.yarn/cache/@types-uuid-npm-8.3.4-7547f4402c-6f11f3ff70.zip/node_modules/@types/uuid/",\
+          "packageDependencies": [\
+            ["@types/uuid", "npm:8.3.4"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6833,7 +6843,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["vitest", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:0.31.0"],\
             ["vue", "npm:3.3.2"],\
             ["vue-router", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:4.2.0"],\
-            ["vue-tsc", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:1.7.3"]\
+            ["vue-tsc", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:1.7.3"],\
+            ["vue-uuid", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:3.0.0"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -6893,6 +6904,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [\
             "@types/typescript",\
             "typescript"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["vue-uuid", [\
+        ["npm:3.0.0", {\
+          "packageLocation": "./.yarn/cache/vue-uuid-npm-3.0.0-d6a8ffec15-e9eed86577.zip/node_modules/vue-uuid/",\
+          "packageDependencies": [\
+            ["vue-uuid", "npm:3.0.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:3.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/vue-uuid-virtual-b4063dac81/0/cache/vue-uuid-npm-3.0.0-d6a8ffec15-e9eed86577.zip/node_modules/vue-uuid/",\
+          "packageDependencies": [\
+            ["vue-uuid", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:3.0.0"],\
+            ["@types/uuid", "npm:8.3.4"],\
+            ["@types/vue", null],\
+            ["uuid", "npm:8.3.2"],\
+            ["vue", "npm:3.3.2"]\
+          ],\
+          "packagePeers": [\
+            "@types/vue",\
+            "vue"\
           ],\
           "linkType": "HARD"\
         }]\

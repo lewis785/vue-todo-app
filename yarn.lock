@@ -507,6 +507,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/uuid@npm:^8.3.4":
+  version: 8.3.4
+  resolution: "@types/uuid@npm:8.3.4"
+  checksum: 6f11f3ff70f30210edaa8071422d405e9c1d4e53abbe50fdce365150d3c698fe7bbff65c1e71ae080cbfb8fded860dbb5e174da96fdbbdfcaa3fb3daa474d20f
+  languageName: node
+  linkType: hard
+
 "@types/yauzl@npm:^2.9.1":
   version: 2.10.0
   resolution: "@types/yauzl@npm:2.10.0"
@@ -5688,6 +5695,7 @@ __metadata:
     vue: ^3.3.2
     vue-router: ^4.2.0
     vue-tsc: ^1.6.4
+    vue-uuid: ^3.0.0
   languageName: unknown
   linkType: soft
 
@@ -5724,6 +5732,18 @@ __metadata:
   bin:
     vue-tsc: bin/vue-tsc.js
   checksum: e15e79609e6401be28087f4a751afc27adace4383e1c56277f5516fa20ff1904b90688453b23ac562312e622ce3597b1771e1825d8876195963497ab7658d683
+  languageName: node
+  linkType: hard
+
+"vue-uuid@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "vue-uuid@npm:3.0.0"
+  dependencies:
+    "@types/uuid": ^8.3.4
+    uuid: ^8.3.2
+  peerDependencies:
+    vue: ">= 3.0.0"
+  checksum: e9eed86577fe49360da61e1d6b9f0a70679616d4afc50d38484b00667ce3038952e3f19918dbd4a91b89347cf93082b0a477f3fc99b44b455e7f07a327a012dc
   languageName: node
   linkType: hard
 
