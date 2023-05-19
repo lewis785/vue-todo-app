@@ -1,18 +1,21 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import Checkbox from './Checkbox.vue'
+import type { Todo } from '@/types/todo'
+import { uuid } from 'vue-uuid'
 
 const value = ref('')
 const isChecked = ref(false)
 
-const emit = defineEmits(['addTodo'])
+const emit = defineEmits<{ (event: 'addTodo', todo: Todo): void }>()
 
 const toggleChecked = () => {
   isChecked.value = !isChecked.value
 }
 
 const onSubmit = () => {
-  emit('addTodo', value.value)
+  emit('addTodo', { id: uuid.v4(), completed: false, value: value.value })
+  value.value = ''
 }
 </script>
 
