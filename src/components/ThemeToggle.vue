@@ -55,4 +55,8 @@ const toggleTheme = () => {
 .switch-checkbox {
   display: none;
 }
+
+.switch-label {
+  height: 1.625rem;
+}
 </style>
