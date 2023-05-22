@@ -51,17 +51,23 @@ const itemsLeft = computed(() => {
     />
     <menu class="actions">
       <p>{{ itemsLeft }} item left</p>
-      <span>
-        <button :aria-selected="filter === Filter.All" @click="() => updateFilter(Filter.All)">
+      <span class="filter">
+        <button
+          class="bold-btn"
+          :aria-selected="filter === Filter.All"
+          @click="() => updateFilter(Filter.All)"
+        >
           All
         </button>
         <button
+          class="bold-btn"
           :aria-selected="filter === Filter.Active"
           @click="() => updateFilter(Filter.Active)"
         >
           Active
         </button>
         <button
+          class="bold-btn"
           :aria-selected="filter === Filter.Completed"
           @click="() => updateFilter(Filter.Completed)"
         >
@@ -73,13 +79,22 @@ const itemsLeft = computed(() => {
   </section>
 
   <menu class="mobile-filter">
-    <button :aria-selected="filter === Filter.All" @click="() => updateFilter(Filter.All)">
+    <button
+      class="bold-btn"
+      :aria-selected="filter === Filter.All"
+      @click="() => updateFilter(Filter.All)"
+    >
       All
     </button>
-    <button :aria-selected="filter === Filter.Active" @click="() => updateFilter(Filter.Active)">
+    <button
+      class="bold-btn"
+      :aria-selected="filter === Filter.Active"
+      @click="() => updateFilter(Filter.Active)"
+    >
       Active
     </button>
     <button
+      class="bold-btn"
       :aria-selected="filter === Filter.Completed"
       @click="() => updateFilter(Filter.Completed)"
     >
@@ -105,9 +120,9 @@ const itemsLeft = computed(() => {
   list-style: none;
   padding: 1rem 1.375rem;
   color: var(--text-disabled);
-  font-size: var(--font-regular);
+  font-size: var(--font-small);
 
-  span {
+  .filter {
     display: flex;
     gap: 1rem;
 
@@ -124,10 +139,13 @@ const itemsLeft = computed(() => {
   padding: 1rem 0;
   border-radius: 5px;
 
-  /* display flex when at mobile width */
   @media only screen and (max-width: 375px) {
     display: flex;
   }
+}
+
+.bold-btn {
+  font-weight: 700;
 }
 
 button {
@@ -137,9 +155,9 @@ button {
   padding: 0;
   margin: 0;
   color: var(--text-disabled);
-  font-size: var(--font-regular);
   font-weight: 400;
   cursor: pointer;
+
   &:hover {
     color: var(--text-hover);
   }
