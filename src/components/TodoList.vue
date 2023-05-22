@@ -13,6 +13,7 @@ const props = defineProps({
 const emit = defineEmits<{
   (event: 'delete', todo: Todo): void
   (event: 'update', todo: Todo): void
+  (event: 'clearCompleted'): void
 }>()
 
 const enum Filter {
@@ -67,7 +68,7 @@ const itemsLeft = computed(() => {
           Completed
         </button>
       </span>
-      <button>Clear Completed</button>
+      <button @click="emit('clearCompleted')">Clear Completed</button>
     </menu>
   </section>
 

@@ -28,13 +28,22 @@ const updateTodo = (todo: Todo) => {
 const deleteTodo = (todo: Todo) => {
   todos.value = todos.value.filter((t) => t.id !== todo.id)
 }
+
+const clearCompletedTodos = () => {
+  todos.value = todos.value.filter((t) => !t.completed)
+}
 </script>
 
 <template>
   <main>
     <Title />
     <TodoInput @add-todo="addTodo" />
-    <TodoList :todos="todos" @update="updateTodo" @delete="deleteTodo" />
+    <TodoList
+      :todos="todos"
+      @update="updateTodo"
+      @delete="deleteTodo"
+      @clear-completed="clearCompletedTodos"
+    />
   </main>
 </template>
 
