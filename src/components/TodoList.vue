@@ -73,6 +73,21 @@ const itemsLeft = computed(() => {
       <button>Clear Completed</button>
     </menu>
   </section>
+
+  <menu class="mobile-filter">
+    <button :aria-selected="filter === Filter.All" @click="() => updateFilter(Filter.All)">
+      All
+    </button>
+    <button :aria-selected="filter === Filter.Active" @click="() => updateFilter(Filter.Active)">
+      Active
+    </button>
+    <button
+      :aria-selected="filter === Filter.Completed"
+      @click="() => updateFilter(Filter.Completed)"
+    >
+      Completed
+    </button>
+  </menu>
 </template>
 
 <style lang="scss" scoped>
@@ -101,6 +116,19 @@ const itemsLeft = computed(() => {
     @media only screen and (max-width: 375px) {
       display: none;
     }
+  }
+}
+
+.mobile-filter {
+  display: none;
+  justify-content: space-evenly;
+  background: var(--container);
+  padding: 1rem 0;
+  border-radius: 5px;
+
+  /* display flex when at mobile width */
+  @media only screen and (max-width: 375px) {
+    display: flex;
   }
 }
 
