@@ -52,12 +52,13 @@ main {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 540px;
-  padding-top: 4.375rem;
-  gap: 1.375rem;
+  max-width: 33.75rem;
+  margin-top: 4.375rem;
+  gap: 22px;
 
-  @media screen and (min-width: 375px) {
-    padding-inline: 1.5rem;
+  @media screen and (max-width: 375px) {
+    margin-top: 2.5rem;
+    padding-inline: 24px;
   }
 }
 </style>
