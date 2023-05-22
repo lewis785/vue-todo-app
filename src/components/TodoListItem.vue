@@ -50,6 +50,10 @@ const emit = defineEmits<{
   .remove-icon {
     display: none;
     cursor: pointer;
+
+    @media screen and (max-width: 375px) {
+      display: block;
+    }
   }
 
   &:hover {
