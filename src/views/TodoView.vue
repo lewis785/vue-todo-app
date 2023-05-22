@@ -1,24 +1,40 @@
-<script lang="ts">
-import Container from '@/components/Container.vue'
+<script setup lang="ts">
 import Title from '@/components/Title.vue'
 import TodoInput from '@/components/TodoInput.vue'
 import TodoList from '@/components/TodoList.vue'
+import type { Todo } from '@/types/todo.js'
+import { ref, watch } from 'vue'
 
-export default {
-  components: {
-    Container,
-    Title,
-    TodoInput,
-    TodoList
-  }
+const storedTodos = localStorage.getItem('todos')
+const todos = ref<Todo[]>(storedTodos ? JSON.parse(storedTodos) : [])
+
+watch(
+  todos,
+  (todos) => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  },
+  { deep: true }
+)
+
+const addTodo = (todo: Todo) => {
+  todos.value.push(todo)
+}
+
+const updateTodo = (todo: Todo) => {
+  const index = todos.value.findIndex((t) => t.id === todo.id)
+  todos.value[index] = todo
+}
+
+const deleteTodo = (todo: Todo) => {
+  todos.value = todos.value.filter((t) => t.id !== todo.id)
 }
 </script>
 
 <template>
   <main>
     <Title />
-    <TodoInput />
-    <TodoList />
+    <TodoInput @add-todo="addTodo" />
+    <TodoList :todos="todos" @update="updateTodo" @delete="deleteTodo" />
   </main>
 </template>
 
@@ -30,5 +46,9 @@ main {
   max-width: 540px;
   padding-top: 4.375rem;
   gap: 1.375rem;
+
+  @media screen and (min-width: 375px) {
+    padding-inline: 1.5rem;
+  }
 }
 </style>
