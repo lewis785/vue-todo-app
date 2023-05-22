@@ -22,10 +22,7 @@ const enum Filter {
 }
 
 const filter = ref(Filter.All)
-const updateFilter = (newFilter: Filter) => {
-  console.log(newFilter)
-  filter.value = newFilter
-}
+const updateFilter = (newFilter: Filter) => (filter.value = newFilter)
 
 const filteredTodos = computed(() => {
   switch (filter.value) {
