@@ -1,22 +1,28 @@
 :root {
   --background: #fafafa;
-  --container: #e4e5f1;
+  --container: #fff;
+  /* --container: #e4e5f1; */
   --text-disabled: #d2d3db;
   --text: #9394a5;
   --text-input: #484b6a;
+  --text-active: hsl(220, 98%, 61%);
+  --border: #ececee;
   --active: #8fb8e7;
 
   --white: #fff;
   --font-regular: 1.125rem;
-  --font-large: 1.5rem;
+  --font-large: 2rem;
+
+  --mobile-width: 375px;
+  --desktop-width: 1440px;
 }
 
 :root.dark-theme {
   --background: #161722;
   --container: #25273c;
-  --text-disabled: #cacde8;
-  --text-disabled-hover: #e4e5f1;
-  --text: #777a92;
+  --text: #cacde8;
+  --text-hover: #e4e5f1;
+  --text-disabled: #777a92;
   --text-input: #4d5066;
   --border: #393a4c;
 }
