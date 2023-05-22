@@ -46,5 +46,16 @@ const emit = defineEmits<{
       color: var(--text-disabled);
     }
   }
+
+  .remove-icon {
+    display: none;
+    cursor: pointer;
+  }
+
+  &:hover {
+    .remove-icon {
+      display: block;
+    }
+  }
 }
 </style>
