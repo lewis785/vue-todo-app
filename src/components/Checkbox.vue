@@ -14,7 +14,7 @@ const props = defineProps({
 <template>
   <input
     @change="$emit('clicked')"
-    v-model="props.isChecked"
+    value="props.isChecked"
     type="checkbox"
     :id="checkboxId"
     class="checkbox-input"
