@@ -45,6 +45,7 @@ const itemsLeft = computed(() => {
   <section class="container">
     <TodoListItem
       v-for="todo in filteredTodos"
+      v-bind:key="todo.id"
       :todo="todo"
       @delete="emit('delete', $event)"
       @update="emit('update', $event)"
