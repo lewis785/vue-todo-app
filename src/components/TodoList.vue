@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { computed, ref, type PropType } from 'vue'
 import TodoListItem from './TodoListItem.vue'
+import TodoListFooter from './TodoListFooter.vue'
 import type { Todo } from '@/types/todo'
 import draggable from 'vuedraggable'
+import { Filter } from '@/types/enum/filter'
 
 const props = defineProps({
   todos: {
@@ -16,12 +18,6 @@ const emit = defineEmits<{
   (event: 'update', todo: Todo): void
   (event: 'clearCompleted'): void
 }>()
-
-const enum Filter {
-  All = 'all',
-  Active = 'active',
-  Completed = 'completed'
-}
 
 const filter = ref(Filter.All)
 const updateFilter = (newFilter: Filter) => (filter.value = newFilter)
@@ -53,33 +49,12 @@ const itemsLeft = computed(() => {
         />
       </template>
       <template #footer>
-        <menu class="actions">
-          <p>{{ itemsLeft }} item left</p>
-          <span class="filter">
-            <button
-              class="bold-btn"
-              :aria-selected="filter === Filter.All"
-              @click="() => updateFilter(Filter.All)"
-            >
-              All
-            </button>
-            <button
-              class="bold-btn"
-              :aria-selected="filter === Filter.Active"
-              @click="() => updateFilter(Filter.Active)"
-            >
-              Active
-            </button>
-            <button
-              class="bold-btn"
-              :aria-selected="filter === Filter.Completed"
-              @click="() => updateFilter(Filter.Completed)"
-            >
-              Completed
-            </button>
-          </span>
-          <button @click="emit('clearCompleted')">Clear Completed</button>
-        </menu>
+        <TodoListFooter
+          :items-left="itemsLeft"
+          :selected-filter="filter"
+          @clear-completed="emit('clearCompleted')"
+          @update-filter="updateFilter"
+        />
       </template>
     </draggable>
   </section>
@@ -121,25 +96,6 @@ const itemsLeft = computed(() => {
 
 .container-shadow {
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-.actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-  padding: 1rem 1.375rem;
-  color: var(--text-disabled);
-  font-size: var(--font-small);
-
-  .filter {
-    display: flex;
-    gap: 1rem;
-
-    @media only screen and (max-width: 375px) {
-      display: none;
-    }
-  }
 }
 
 .mobile-filter {
