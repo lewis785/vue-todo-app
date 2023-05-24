@@ -42,7 +42,7 @@ const itemsLeft = computed(() => {
 </script>
 
 <template>
-  <section class="container">
+  <section class="container container-shadow">
     <TodoListItem
       v-for="todo in filteredTodos"
       v-bind:key="todo.id"
@@ -79,7 +79,7 @@ const itemsLeft = computed(() => {
     </menu>
   </section>
 
-  <menu class="mobile-filter">
+  <menu class="mobile-filter container-shadow">
     <button
       class="bold-btn"
       :aria-selected="filter === Filter.All"
@@ -112,6 +112,11 @@ const itemsLeft = computed(() => {
   background-color: var(--container);
   border-radius: 5px;
   color: var(--text-hover);
+}
+
+// class that adds a 10px diffused shadow
+.container-shadow {
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .actions {
