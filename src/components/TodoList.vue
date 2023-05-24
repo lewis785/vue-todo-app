@@ -19,11 +19,11 @@ const emit = defineEmits<{
   (event: 'clearCompleted'): void
 }>()
 
-const filter = ref(Filter.All)
-const updateFilter = (newFilter: Filter) => (filter.value = newFilter)
+const selectedFilter = ref(Filter.All)
+const updateSelectedFilter = (newFilter: Filter) => (selectedFilter.value = newFilter)
 
 const filteredTodos = computed(() => {
-  switch (filter.value) {
+  switch (selectedFilter.value) {
     case Filter.Active:
       return props.todos.filter((todo) => !todo.completed)
     case Filter.Completed:
@@ -51,9 +51,9 @@ const itemsLeft = computed(() => {
       <template #footer>
         <TodoListFooter
           :items-left="itemsLeft"
-          :selected-filter="filter"
+          :selected-filter="selectedFilter"
           @clear-completed="emit('clearCompleted')"
-          @update-filter="updateFilter"
+          @update-filter="updateSelectedFilter"
         />
       </template>
     </draggable>
@@ -61,25 +61,12 @@ const itemsLeft = computed(() => {
 
   <menu class="mobile-filter container-shadow">
     <button
-      class="bold-btn"
-      :aria-selected="filter === Filter.All"
-      @click="() => updateFilter(Filter.All)"
+      v-for="filter in Object.values(Filter)"
+      key="filter"
+      :aria-selected="selectedFilter === filter"
+      @click="() => updateSelectedFilter(filter)"
     >
-      All
-    </button>
-    <button
-      class="bold-btn"
-      :aria-selected="filter === Filter.Active"
-      @click="() => updateFilter(Filter.Active)"
-    >
-      Active
-    </button>
-    <button
-      class="bold-btn"
-      :aria-selected="filter === Filter.Completed"
-      @click="() => updateFilter(Filter.Completed)"
-    >
-      Completed
+      {{ filter }}
     </button>
   </menu>
 </template>
@@ -105,13 +92,14 @@ const itemsLeft = computed(() => {
   padding: 1rem 0;
   border-radius: 5px;
 
+  button {
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
   @media only screen and (max-width: 375px) {
     display: flex;
   }
-}
-
-.bold-btn {
-  font-weight: 700;
 }
 
 button {
