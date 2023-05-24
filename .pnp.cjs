@@ -53,7 +53,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["vue", "npm:3.3.2"],\
             ["vue-router", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:4.2.0"],\
             ["vue-tsc", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:1.7.3"],\
-            ["vue-uuid", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:3.0.0"]\
+            ["vue-uuid", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:3.0.0"],\
+            ["vuedraggable", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:4.1.0"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -5878,6 +5879,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["sortablejs", [\
+        ["npm:1.14.0", {\
+          "packageLocation": "./.yarn/cache/sortablejs-npm-1.14.0-77f80432c4-7b9d2cbb03.zip/node_modules/sortablejs/",\
+          "packageDependencies": [\
+            ["sortablejs", "npm:1.14.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["source-map-js", [\
         ["npm:1.0.2", {\
           "packageLocation": "./.yarn/cache/source-map-js-npm-1.0.2-ee4f9f9b30-c049a7fc4d.zip/node_modules/source-map-js/",\
@@ -6844,7 +6854,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["vue", "npm:3.3.2"],\
             ["vue-router", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:4.2.0"],\
             ["vue-tsc", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:1.7.3"],\
-            ["vue-uuid", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:3.0.0"]\
+            ["vue-uuid", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:3.0.0"],\
+            ["vuedraggable", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:4.1.0"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -6923,6 +6934,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/uuid", "npm:8.3.4"],\
             ["@types/vue", null],\
             ["uuid", "npm:8.3.2"],\
+            ["vue", "npm:3.3.2"]\
+          ],\
+          "packagePeers": [\
+            "@types/vue",\
+            "vue"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["vuedraggable", [\
+        ["npm:4.1.0", {\
+          "packageLocation": "./.yarn/cache/vuedraggable-npm-4.1.0-785593d488-8b4c5a6b38.zip/node_modules/vuedraggable/",\
+          "packageDependencies": [\
+            ["vuedraggable", "npm:4.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:4.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/vuedraggable-virtual-ae6fd00e6a/0/cache/vuedraggable-npm-4.1.0-785593d488-8b4c5a6b38.zip/node_modules/vuedraggable/",\
+          "packageDependencies": [\
+            ["vuedraggable", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:4.1.0"],\
+            ["@types/vue", null],\
+            ["sortablejs", "npm:1.14.0"],\
             ["vue", "npm:3.3.2"]\
           ],\
           "packagePeers": [\
