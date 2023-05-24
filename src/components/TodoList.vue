@@ -2,6 +2,7 @@
 import { computed, ref, type PropType } from 'vue'
 import TodoListItem from './TodoListItem.vue'
 import type { Todo } from '@/types/todo'
+import draggable from 'vuedraggable'
 
 const props = defineProps({
   todos: {
@@ -43,40 +44,44 @@ const itemsLeft = computed(() => {
 
 <template>
   <section class="container container-shadow">
-    <TodoListItem
-      v-for="todo in filteredTodos"
-      v-bind:key="todo.id"
-      :todo="todo"
-      @delete="emit('delete', $event)"
-      @update="emit('update', $event)"
-    />
-    <menu class="actions">
-      <p>{{ itemsLeft }} item left</p>
-      <span class="filter">
-        <button
-          class="bold-btn"
-          :aria-selected="filter === Filter.All"
-          @click="() => updateFilter(Filter.All)"
-        >
-          All
-        </button>
-        <button
-          class="bold-btn"
-          :aria-selected="filter === Filter.Active"
-          @click="() => updateFilter(Filter.Active)"
-        >
-          Active
-        </button>
-        <button
-          class="bold-btn"
-          :aria-selected="filter === Filter.Completed"
-          @click="() => updateFilter(Filter.Completed)"
-        >
-          Completed
-        </button>
-      </span>
-      <button @click="emit('clearCompleted')">Clear Completed</button>
-    </menu>
+    <draggable :list="filteredTodos" item-key="id">
+      <template #item="{ element }: { element: Todo }">
+        <TodoListItem
+          :todo="element"
+          @delete="emit('delete', $event)"
+          @update="emit('update', $event)"
+        />
+      </template>
+      <template #footer>
+        <menu class="actions">
+          <p>{{ itemsLeft }} item left</p>
+          <span class="filter">
+            <button
+              class="bold-btn"
+              :aria-selected="filter === Filter.All"
+              @click="() => updateFilter(Filter.All)"
+            >
+              All
+            </button>
+            <button
+              class="bold-btn"
+              :aria-selected="filter === Filter.Active"
+              @click="() => updateFilter(Filter.Active)"
+            >
+              Active
+            </button>
+            <button
+              class="bold-btn"
+              :aria-selected="filter === Filter.Completed"
+              @click="() => updateFilter(Filter.Completed)"
+            >
+              Completed
+            </button>
+          </span>
+          <button @click="emit('clearCompleted')">Clear Completed</button>
+        </menu>
+      </template>
+    </draggable>
   </section>
 
   <menu class="mobile-filter container-shadow">
@@ -114,7 +119,6 @@ const itemsLeft = computed(() => {
   color: var(--text-hover);
 }
 
-// class that adds a 10px diffused shadow
 .container-shadow {
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
