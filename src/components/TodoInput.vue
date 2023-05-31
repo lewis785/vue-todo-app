@@ -14,7 +14,7 @@ const toggleChecked = () => {
 }
 
 const onSubmit = () => {
-  emit('addTodo', { id: uuid.v4(), completed: false, value: value.value })
+  emit('addTodo', { id: uuid.v4(), completed: isChecked.value, value: value.value })
   value.value = ''
 }
 </script>
