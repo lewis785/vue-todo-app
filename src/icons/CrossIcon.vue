@@ -1,5 +1,12 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
+    role="img"
+    alt="cross icon"
+    aria-label="cross icon"
+  >
     <path
       fill="#494C6B"
       fill-rule="evenodd"

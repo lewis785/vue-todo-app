@@ -1,5 +1,12 @@
 <template>
-  <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+  <svg
+    class="sun-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="26"
+    height="26"
+    alt="sun icon"
+    aria-label="sun icon"
+  >
     <path
       fill="#FFF"
       fill-rule="evenodd"
