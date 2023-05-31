@@ -58,6 +58,11 @@ const emit = defineEmits<{
     cursor: pointer;
     width: 1.5rem;
 
+    &:hover {
+      transition: transform 0.2s ease-in-out;
+      transform: scale(1.2);
+    }
+
     @media screen and (max-width: 375px) {
       display: block;
     }
