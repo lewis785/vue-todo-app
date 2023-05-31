@@ -22,7 +22,12 @@ const onSubmit = () => {
 <template>
   <form @submit.prevent="onSubmit">
     <Checkbox @clicked="toggleChecked" :is-checked="isChecked" />
-    <input v-model="value" type="text" placeholder="Create a new todo..." />
+    <input
+      v-model="value"
+      type="text"
+      placeholder="Create a new todo..."
+      aria-label="todo input field"
+    />
   </form>
 </template>
 
@@ -40,7 +45,6 @@ form {
     color: var(--text-hover);
     background: transparent;
     border: none;
-    outline: none;
     width: 100%;
     height: 1.5rem;
     padding: 0;

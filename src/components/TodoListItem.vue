@@ -24,7 +24,7 @@ const emit = defineEmits<{
       @clicked="emit('update', { ...todo, completed: !todo.completed })"
     />
     <p>{{ todo.value }}</p>
-    <CrossIcon class="remove-icon" @click="emit('delete', todo)" />
+    <CrossIcon class="remove-icon" @click="emit('delete', todo)" tabindex="0" role="button" />
   </article>
 </template>
 

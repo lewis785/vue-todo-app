@@ -44,8 +44,21 @@ const toggleTheme = () => {
 </script>
 
 <template>
-  <input @change="toggleTheme" id="checkbox" type="checkbox" class="switch-checkbox" />
-  <label for="checkbox" class="switch-label">
+  <label
+    for="checkbox"
+    class="switch-label"
+    tabindex="0"
+    role="button"
+    @keydown.space.prevent="toggleTheme"
+  >
+    <input
+      id="checkbox"
+      name="checkbox"
+      type="checkbox"
+      class="switch-checkbox"
+      aria-hidden
+      @change="toggleTheme"
+    />
     <MoonIcon v-if="store.theme === Theme.LIGHT" />
     <SunIcon v-else />
   </label>
@@ -58,5 +71,6 @@ const toggleTheme = () => {
 
 .switch-label {
   height: 1.625rem;
+  border-radius: 50%;
 }
 </style>

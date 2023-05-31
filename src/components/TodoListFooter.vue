@@ -28,11 +28,12 @@ const emit = defineEmits<{
         :key="filter"
         :aria-selected="filter === selectedFilter"
         @click="() => emit('updateFilter', filter)"
+        tabindex="0"
       >
         {{ filter }}
       </button>
     </span>
-    <button @click="emit('clearCompleted')">Clear Completed</button>
+    <button @click="emit('clearCompleted')" tabindex="0">Clear Completed</button>
   </menu>
 </template>
 
@@ -63,7 +64,6 @@ const emit = defineEmits<{
   button {
     background: transparent;
     border: none;
-    outline: none;
     padding: 0;
     margin: 0;
     color: var(--text-disabled);

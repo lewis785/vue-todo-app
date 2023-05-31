@@ -12,14 +12,14 @@ const props = defineProps({
 </script>
 
 <template>
-  <input
-    @change="$emit('clicked')"
-    value="props.isChecked"
-    type="checkbox"
-    :id="checkboxId"
-    class="checkbox-input"
-  />
-  <label class="checkbox-label" :for="checkboxId">
+  <label class="checkbox-label" :for="checkboxId" tabindex="0" role="button" aria-label="Checkbox">
+    <input
+      @change="$emit('clicked')"
+      value="props.isChecked"
+      type="checkbox"
+      :id="checkboxId"
+      class="checkbox-input"
+    />
     <div class="background" :data-checked="props.isChecked">
       <TickIcon v-if="props.isChecked" />
       <div class="cover" v-if="!props.isChecked" />
@@ -33,6 +33,7 @@ const props = defineProps({
 }
 
 .checkbox-label {
+  border-radius: 50%;
   .background {
     position: relative;
     width: 1.5rem;

@@ -65,6 +65,7 @@ const itemsLeft = computed(() => {
       key="filter"
       :aria-selected="selectedFilter === filter"
       @click="() => updateSelectedFilter(filter)"
+      tabindex="0"
     >
       {{ filter }}
     </button>
@@ -105,7 +106,6 @@ const itemsLeft = computed(() => {
 button {
   background: transparent;
   border: none;
-  outline: none;
   padding: 0;
   margin: 0;
   color: var(--text-disabled);
