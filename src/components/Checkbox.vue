@@ -12,7 +12,14 @@ const props = defineProps({
 </script>
 
 <template>
-  <label class="checkbox-label" :for="checkboxId" tabindex="0" role="button" aria-label="Checkbox">
+  <label
+    class="checkbox-label"
+    :for="checkboxId"
+    tabindex="0"
+    role="button"
+    aria-label="Checkbox"
+    @keydown.space.prevent="$emit('clicked')"
+  >
     <input
       @change="$emit('clicked')"
       value="props.isChecked"
