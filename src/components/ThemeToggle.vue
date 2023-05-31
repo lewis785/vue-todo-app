@@ -46,8 +46,8 @@ const toggleTheme = () => {
 <template>
   <input @change="toggleTheme" id="checkbox" type="checkbox" class="switch-checkbox" />
   <label for="checkbox" class="switch-label">
-    <SunIcon v-if="store.theme === Theme.LIGHT" />
-    <MoonIcon v-else />
+    <MoonIcon v-if="store.theme === Theme.LIGHT" />
+    <SunIcon v-else />
   </label>
 </template>
 
