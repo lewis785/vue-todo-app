@@ -39,6 +39,7 @@ const clearCompletedTodos = () => {
     <Title />
     <TodoInput @add-todo="addTodo" />
     <TodoList
+      v-if="todos.length > 0"
       :todos="todos"
       @update="updateTodo"
       @delete="deleteTodo"
@@ -54,7 +55,7 @@ main {
   width: 100%;
   max-width: 33.75rem;
   margin-top: 4.375rem;
-  gap: 22px;
+  gap: 1.375rem;
 
   @media screen and (max-width: 375px) {
     margin-top: 2.5rem;
