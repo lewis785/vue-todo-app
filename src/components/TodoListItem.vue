@@ -41,6 +41,7 @@ const emit = defineEmits<{
   align-items: center;
   border-bottom: 1px solid var(--border);
   padding: 1rem 1.375rem;
+  cursor: grab;
 
   p {
     width: 100%;
