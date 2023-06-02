@@ -70,6 +70,8 @@ const itemsLeft = computed(() => {
       {{ filter }}
     </button>
   </menu>
+
+  <h3 class="drag-info" v-if="selectedFilter === Filter.All">Drag and drop to reorder list</h3>
 </template>
 
 <style lang="scss" scoped>
@@ -101,6 +103,14 @@ const itemsLeft = computed(() => {
   @media only screen and (max-width: 375px) {
     display: flex;
   }
+}
+
+.drag-info {
+  text-align: center;
+  color: var(--text-disabled);
+  font-size: var(--font-small);
+  font-weight: 400;
+  margin-top: 1.75rem;
 }
 
 button {
