@@ -2,11 +2,12 @@
 import Title from '@/components/Title.vue'
 import TodoInput from '@/components/TodoInput.vue'
 import TodoList from '@/components/TodoList.vue'
+import { defaultTodos } from '@/data/defaultTodo'
 import type { Todo } from '@/types/todo.js'
 import { ref, watch } from 'vue'
 
 const storedTodos = localStorage.getItem('todos')
-const todos = ref<Todo[]>(storedTodos ? JSON.parse(storedTodos) : [])
+const todos = ref<Todo[]>(storedTodos ? JSON.parse(storedTodos) : defaultTodos)
 
 watch(
   todos,
